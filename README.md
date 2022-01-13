@@ -47,4 +47,5 @@ sudo docker build -t g3_honeypot .
 sudo docker run -v ${PWD}:/usr/src/app -p 2222:2222 g3_honeypot
 
 
+# Bibliography
 This simple Honeypot was done by following this tutorial: https://securehoney.net/blog/how-to-build-an-ssh-honeypot-in-python-and-docker-part-1.html
