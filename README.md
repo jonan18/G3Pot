@@ -3,7 +3,8 @@
 This honeypot logs all connections done to the 22 port! 
 The following commands need to be followed to set up this project in a brand new EC2 with the Ubuntu 20.4 AMI on AWS.
 
-#install Docker
+# install Docker
+
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -13,16 +14,16 @@ sudo apt install docker-ce
 sudo systemctl status docker
 sudo usermod -aG docker ${USER}
 
-#Install Docker-compose
+# Install Docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
-#Install Git
+# Install Git
 sudo apt install git
 git --version
 
-#Clone the repository
+# Clone the repository
 sudo iptables -A PREROUTING -t nat -p tcp --dport 22 -j REDIRECT --to-port 2222
 git clone https://github.com/jonan18/G3Pot.git
 cd G3_honeypot/
