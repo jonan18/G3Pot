@@ -52,5 +52,15 @@ sudo docker run -v ${PWD}:/usr/src/app -p 2222:2222 g3_honeypot
 # Test
 You can test it by simply running an SSH command to your EC2 : "ssh test@<EC2.Public.IP.Address>".
 
+# Important !
+You will need to delete the prerouting rule you stablished before when you want to exit your EC2, in order to be able to connect back later on. for that, you will have to use the following command
+
+sudo iptables -t nat -v -L -n --line-number
+
+sudo iptables -t nat -D PREROUTING {rule-number-here} 
+
+Normally you will need to delete the first rule ince it's the only one we added.
+
+
 # Bibliography
 This simple Honeypot was done by following this tutorial: https://securehoney.net/blog/how-to-build-an-ssh-honeypot-in-python-and-docker-part-1.html
