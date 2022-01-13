@@ -1,6 +1,6 @@
 # G3Pot
 
-This honeypot logs all connections done to the 22 port! 
+This honeypot logs all connections done to the port 22! 
 The following commands need to be followed to set up this project in a brand new EC2 with the Ubuntu 20.4 AMI on AWS.
 
 # install Docker
@@ -46,6 +46,8 @@ sudo docker build -t g3_honeypot .
 
 sudo docker run -v ${PWD}:/usr/src/app -p 2222:2222 g3_honeypot
 
+# Test
+You can test it by simply running an SSH command to your EC2 : "ssh test@<EC2.Public.IP.Address>".
 
 # Bibliography
 This simple Honeypot was done by following this tutorial: https://securehoney.net/blog/how-to-build-an-ssh-honeypot-in-python-and-docker-part-1.html
