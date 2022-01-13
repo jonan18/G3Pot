@@ -33,8 +33,11 @@ sudo apt install git
 
 git --version
 
-# Clone the repository
+# Redirect Traffic with IPTables from port 22 to 2222
+
 sudo iptables -A PREROUTING -t nat -p tcp --dport 22 -j REDIRECT --to-port 2222
+
+# Clone the repository
 
 git clone https://github.com/jonan18/G3Pot.git
 
