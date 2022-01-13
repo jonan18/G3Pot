@@ -41,7 +41,7 @@ sudo iptables -A PREROUTING -t nat -p tcp --dport 22 -j REDIRECT --to-port 2222
 
 git clone https://github.com/jonan18/G3Pot.git
 
-cd G3_honeypot/
+cd G3Pot/
 
 ssh-keygen -t rsa -f server.key
 
